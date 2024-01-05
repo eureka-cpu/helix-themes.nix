@@ -3,7 +3,7 @@
 
   outputs = { self }: {
     themes = {
-      kanabox_default = ./themes/kanabox_default.nix;
+      kanabox_default = import ./themes/kanabox_default.nix;
       gruvbox_material_dark_medium = 
         let
           bg0 = "#282828";
