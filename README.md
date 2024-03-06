@@ -1,9 +1,16 @@
-# Declarative Helix Editor Themes
+# Declarative Helix Editor Themes for Home-Manager
 
 Nix home-manager options for the Helix editor has an attribute for themes which expects an attribute set of attributes written as Nix-TOML values: https://mynixos.com/home-manager/option/programs.helix.themes.
 This can get really hairy if you are trying to actually use this attribute to declare your custom themes.
 
-The goal is to eventually add a script that will convert your existing custom theme from TOML to a Nix-TOML attribute set, placing it within a `themes` directory which will then be available in the flake outputs.
+## Goals
+This project is probably better off being broken up into several pieces which would become more useful to others, but for now it's easier
+for me to work on if I don't have to wait on reviews. The following are some long-term goals I'd like to meet until then.
+- add a function that will convert your existing custom theme from TOML to a Nix-TOML attribute set, placing it within a `themes` directory which will then be available in the flake outputs.
+- add `nix-colors` integration for better base16 themes than the ones provided in Helix by default.
+- eventually convert this flake into a home-manager module at which point this repository will become public archive.
+
+## Usage
 
 The themes already available can be used by importing the flake, and assigning the home-manager Helix themes options.
 
@@ -58,7 +65,10 @@ In your `home.nix`:
     settings = {
       theme = "your_custom_theme_name";
     };
+    # for all themes
     themes = inputs.helix-themes.outputs.themes;
+    # or for a single theme
+    themes = { inputs.helix-themes.outputs.your_custom_theme_name; };
   };
   # ...
 ```
