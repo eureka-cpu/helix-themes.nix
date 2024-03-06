@@ -30,7 +30,7 @@ let
   peachRed = "#FF5D62";
   surimiOrange = "#FFA066";
   katanaGray = "#717C7C";
-in {
+in gruvbox_material_dark_medium: {
   "type" = carpYellow;
   "constant" = sakuraPink;
   "constant.numeric" = sakuraPink;

@@ -1,10 +1,9 @@
 {
-  description = "Declarative Helix editor themes";
+  description = "Declarative Helix editor themes for home-manager";
 
   outputs = { self }: {
     themes = {
-      kanabox_default = (import ./themes/kanabox_default.nix);
-      gruvbox_material_dark_medium = (import ./themes/gruvbox_material_dark_medium.nix); 
+      inherit (./themes/default.nix) kanabox_default gruvbox_material_dark_medium;
     };
   };
 }
