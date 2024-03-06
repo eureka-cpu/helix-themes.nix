@@ -17,7 +17,7 @@ let
   
   grey0 = "#7c6f64";
   grey2 = "#a89984";
-in kanabox_default: {     
+in {     
   "type" = yellow;
   "constant" = purple;
   "constant.numeric" = purple;
